@@ -37,8 +37,10 @@ class Array
 end
 
 if __FILE__ == $PROGRAM_NAME
-  p [].bsearch_low { |ele| ele == 2 } # nil
-  p [].bsearch_high { |ele| ele == 2 } # nil
+  p [0].bsearch_low { |ele| ele == 2 } # nil
+  p [0].bsearch_high { |ele| ele == 2 } # nil
+  p [1].bsearch_low { |ele| ele == 2 } # nil
+  p [1].bsearch_high { |ele| ele == 2 } # nil
 
   p [1, 2, 3, 4, 5, 6].bsearch_low { |ele| ele == 4 } # 3
   p [1, 2, 3, 4, 5, 6].bsearch_high { |ele| ele == 4 } # 3

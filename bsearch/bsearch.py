@@ -40,6 +40,8 @@ def bsearch_high(arr: List[int], condition: Callable[[int], bool]) -> Optional[i
 if __name__ == '__main__':
     print(bsearch_low([], lambda ele: ele == 2))  # None
     print(bsearch_high([], lambda ele: ele == 2))  # None
+    print(bsearch_low([1], lambda ele: ele == 2))  # None
+    print(bsearch_low([1], lambda ele: ele == 2))  # None
     print('--------')
 
     print(bsearch_low([1, 2, 3, 4, 5, 6], lambda ele: ele == 4))  # 3
