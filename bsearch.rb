@@ -33,3 +33,17 @@ class Array
     low
   end
 end
+
+if __FILE__ == $PROGRAM_NAME
+  p [1, 2, 3, 4, 5, 6].bsearch_low { |ele| ele == 4 } # 3
+  p [1, 2, 3, 4, 5, 6].bsearch_high { |ele| ele == 4 } # 3
+
+  p [1, 2, 4, 4, 4, 5].bsearch_low { |ele| ele == 4 } # 2
+  p [1, 2, 4, 4, 4, 5].bsearch_low { |ele| ele > 5 } # nil
+  p [1, 2, 4, 4, 4, 5].bsearch_low { |ele| ele >= 3 } # 2
+
+  p [1, 2, 4, 4, 4, 5].bsearch_high { |ele| ele == 4 } # 4
+  p [1, 2, 4, 4, 4, 5].bsearch_high { |ele| ele <= 4 } # 4
+  p [1, 2, 4, 4, 4, 5].bsearch_high { |ele| ele <= 0 } # nil
+  p [1, 2, 4, 4, 4, 5].bsearch_high { |ele| ele > 5 } # nil
+end
