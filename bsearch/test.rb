@@ -1,5 +1,9 @@
 require_relative 'bsearch'
 
+"""
+
+"""
+
 # @param {Integer[]} nums
 # @param {Integer} target
 # @return {Integer[]}
