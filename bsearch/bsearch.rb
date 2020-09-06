@@ -5,6 +5,7 @@ class Array
     while low < high
       mid = low + (high - low) / 2
       smaller = block.call(self[mid])
+      # keep this upper-bound while trying lower upper-bound
       if smaller
         high = mid
       else
@@ -22,6 +23,7 @@ class Array
     while low < high
       mid = low + (high - low) / 2
       bigger = block.call(self[mid])
+      # keep this lower-bound while trying higher lower-bound
       if bigger
         low = mid
       else

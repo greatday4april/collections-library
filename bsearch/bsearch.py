@@ -7,6 +7,7 @@ def bsearch_low(arr: List[int], condition: Callable[[int], bool]) -> Optional[in
     while low < high:
         mid = low + (high - low) // 2
         smaller = condition(arr[mid])
+        # keep this upper-bound while trying lower upper-bound
         if smaller:
             high = mid
         else:
@@ -24,6 +25,7 @@ def bsearch_high(arr: List[int], condition: Callable[[int], bool]) -> Optional[i
     while low < high:
         mid = low + (high - low) // 2
         bigger = condition(arr[mid])
+        # keep this lower-bound while trying higher lower-bound
         if bigger:
             low = mid
         else:
