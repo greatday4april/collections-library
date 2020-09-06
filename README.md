@@ -1,3 +1,3 @@
-# ruby_collections
+# collections
 
-An extension package for data structures and algorithms in Ruby
+An extension package for whatever data structures and algorithms not covered in standard library
