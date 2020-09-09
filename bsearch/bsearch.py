@@ -8,17 +8,16 @@ condition should be a function that evaluates as
 
 def bsearch_low(arr: List[int], condition: Callable[[int], bool]) -> Optional[int]:
     low = 0
-    high = len(arr)
-    while low < high:
-        mid = low + (high - low) // 2  # closer to low
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2  # closer to low
         smaller = condition(arr[mid])
-        # keep this upper-bound while trying lower upper-bound
         if smaller:
-            high = mid
+            high = mid - 1
         else:
             low = mid + 1
 
-    if low < 0 or low >= len(arr) or not condition(arr[low]):
+    if low >= len(arr) or not condition(arr[low]):
         return None
 
     return low
@@ -32,22 +31,19 @@ condition should be a function that evaluates as
 
 def bsearch_high(arr: List[int], condition: Callable[[int], bool]) -> Optional[int]:
     low = 0
-    high = len(arr)
-    while low < high:
-        mid = high - (high - low) // 2  # closer to high
-        if mid >= len(arr):
-            break
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2  # closer to high
         bigger = condition(arr[mid])
-        # keep this lower-bound while trying higher lower-bound
         if bigger:
-            low = mid
+            low = mid + 1
         else:
             high = mid - 1
 
-    if low < 0 or low >= len(arr) or not condition(arr[low]):
+    if high < 0 or not condition(arr[high]):
         return None
 
-    return low
+    return high
 
 
 if __name__ == '__main__':

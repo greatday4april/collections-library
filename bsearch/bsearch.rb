@@ -5,13 +5,12 @@ class Array
   "''
   def bsearch_low(&block)
     low = 0
-    high = length
-    while low < high
-      mid = low + (high - low) / 2 # closer to low
+    high = length - 1
+    while low <= high
+      mid = (low + high) / 2
       smaller = block.call(self[mid])
-      # keep this upper-bound while trying lower upper-bound
       if smaller
-        high = mid
+        high = mid - 1
       else
         low = mid + 1
       end
@@ -27,22 +26,19 @@ class Array
   "''
   def bsearch_high(&block)
     low = 0
-    high = length
-    while low < high
-      mid = high - (high - low) / 2 # closer to high
-      break if self[mid].nil?
-
+    high = length - 1
+    while low <= high
+      mid = (low + high) / 2
       bigger = block.call(self[mid])
-      # keep this lower-bound while trying higher lower-bound
       if bigger
-        low = mid
+        low = mid + 1
       else
         high = mid - 1
       end
     end
-    return nil if self[low].nil? || !block.call(self[low])
+    return nil if self[high].nil? || !block.call(self[high])
 
-    low
+    high
   end
 end
 

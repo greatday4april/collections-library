@@ -1,8 +1,10 @@
 require_relative 'bsearch'
 
-"""
-
-"""
+''"
+Given an array of integers nums sorted in ascending order, find the starting and ending position of a given target value.
+Your algorithm's runtime complexity must be in the order of O(log n).
+If the target is not found in the array, return [-1, -1].
+"''
 
 # @param {Integer[]} nums
 # @param {Integer} target
@@ -18,6 +20,6 @@ nums = [5, 7, 7, 8, 8, 10]
 target = 8
 p search_range(nums, target) # [3,4]
 
-nums = [5,7,7,8,8,10]
+nums = [5, 7, 7, 8, 8, 10]
 target = 6
 p search_range(nums, target) # [-1, -1]
