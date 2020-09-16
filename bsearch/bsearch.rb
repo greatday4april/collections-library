@@ -15,7 +15,7 @@ class Array
         low = mid + 1
       end
     end
-    return nil if self[low].nil? || !block.call(self[low])
+    return nil if self[low].nil?
 
     low
   end
@@ -36,7 +36,7 @@ class Array
         high = mid - 1
       end
     end
-    return nil if self[high].nil? || !block.call(self[high])
+    return nil if self[high].nil?
 
     high
   end
