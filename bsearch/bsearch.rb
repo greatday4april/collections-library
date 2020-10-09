@@ -15,7 +15,7 @@ class Array
         low = mid + 1
       end
     end
-    return nil if self[low].nil?
+    return nil if low >= length
 
     low
   end
@@ -36,7 +36,7 @@ class Array
         high = mid - 1
       end
     end
-    return nil if self[high].nil?
+    return nil if high < 0
 
     high
   end
