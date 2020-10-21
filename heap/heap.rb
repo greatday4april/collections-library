@@ -44,7 +44,11 @@ class Heap
   def inspect
     "Heap: #{JSON.generate(@elements[1..-1])}"
   end
-
+  
+  def to_a
+    @elements[1..-1]
+  end
+    
   def size
     @elements.size - 1
   end
@@ -82,13 +86,13 @@ class Heap
 end
 
 class MaxHeap < Heap
-  def initialize(elements)
+  def initialize(elements=[])
     super(elements) {|ele_a, ele_b| ele_a >= ele_b}
   end
 end
 
 class MinHeap < Heap
-  def initialize(elements)
+  def initialize(elements=[])
     super(elements) {|ele_a, ele_b| ele_a <= ele_b}
   end
 end
