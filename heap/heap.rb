@@ -93,7 +93,7 @@ class MinHeap < Heap
   end
 end
 
-if __FILE__ == $PROGRAM_NAME
-  p MaxHeap.new([2, 3, 100, 56, 12, 24])
-  p MinHeap.new([2, 3, 100, 56, 12, 24])
-end
+# if __FILE__ == $PROGRAM_NAME
+#   p MaxHeap.new([2, 3, 100, 56, 12, 24])
+#   p MinHeap.new([2, 3, 100, 56, 12, 24])
+# end
