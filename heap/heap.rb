@@ -37,7 +37,7 @@ class Heap
     top
   end
 
-  def peak
+  def top
     @elements[1]
   end
 
@@ -51,6 +51,10 @@ class Heap
 
   def size
     @elements.size - 1
+  end
+
+  def empty?
+    self.size == 0
   end
 
   def to_a
