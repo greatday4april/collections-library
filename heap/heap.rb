@@ -45,6 +45,10 @@ class Heap
     "Heap: #{JSON.generate(@elements[1..-1])}"
   end
 
+  def to_a
+    @elements[1..-1]
+  end
+
   def size
     @elements.size - 1
   end
