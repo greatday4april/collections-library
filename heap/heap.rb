@@ -49,6 +49,10 @@ class Heap
     @elements.size - 1
   end
 
+  def to_a
+    @elements[1..-1]
+  end
+
   private
 
   def bubble_up(index)
@@ -82,14 +86,14 @@ class Heap
 end
 
 class MaxHeap < Heap
-  def initialize(elements)
-    super(elements) {|ele_a, ele_b| ele_a >= ele_b}
+  def initialize(elements=[])
+    super(elements) {|ele_a, ele_b| (ele_a <=> ele_b) >= 0}
   end
 end
 
 class MinHeap < Heap
-  def initialize(elements)
-    super(elements) {|ele_a, ele_b| ele_a <= ele_b}
+  def initialize(elements=[])
+    super(elements) {|ele_a, ele_b| (ele_a <=> ele_b) <= 0}
   end
 end
 
